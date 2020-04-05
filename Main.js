@@ -17,7 +17,7 @@ const mods = {
   change: (mod, value) => {
     mods[mod] = value;
     KeyboardBody.refresh(mods);
-    if (value === 'lang') {
+    if (mod === 'lang') {
       sessionStorage.lang = value;
     }
   },
