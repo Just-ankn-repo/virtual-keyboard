@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    width: 687px;
+    margin: auto;
+}
+
+.input_frame {
+    border: 2px solid black;
+    border-radius: 1%;
+    width: 683px;
+    resize: none;
+}
+
+.keyboard_frame {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    border: 2px solid black;
+    border-radius: 1%;
+}
+
+.keyboard_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.key_button {
+    border-radius: 15%;
+    border: 1.2px solid black;
+    margin: 2px;
+    padding: 10px 5px;
+    animation-duration: infinite;
+    animation-name: release;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    flex: 1;
+    text-align: center;
+}
+
+.keyboard_row:nth-child(5) .key_button:nth-child(4) {
+    flex: 10;
+    border-radius: 4%;
+    text-align: center;
+}
+
+.keyboard_row:nth-child(4) .key_button:last-child {
+    padding: 10px 2px;
+}
+
+.keyboard_row:nth-child(4) .key_button:first-child {
+    padding: 10px 18px;
+}
+
+.keyboard_row:nth-child(4) .key_button:nth-last-child(2) {
+    padding: 10px 3px;
+}
+
+.active {
+    /* background-color: aqua; */
+    animation: push;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes push {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.9;
+    }
+}
+
+@keyframes release {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.9;
+      }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
