@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-/* global sessionStorage document window */
+/* global localStorage document window */
 
 import KeyboardFrame from './KeyboardFrame.js';
 import InputFrame from './InputFrame.js';
@@ -18,15 +18,15 @@ const mods = {
     mods[mod] = value;
     KeyboardBody.refresh(mods);
     if (mod === 'lang') {
-      sessionStorage.lang = value;
+      localStorage.lang = value;
     }
   },
 };
 
-if (sessionStorage.lang) {
-  mods.lang = sessionStorage.lang;
+if (localStorage.lang) {
+  mods.lang = localStorage.lang;
 } else {
-  sessionStorage.lang = mods.lang;
+  localStorage.lang = mods.lang;
 }
 
 KeyboardBody.mods = mods;
@@ -133,11 +133,11 @@ document.body.addEventListener('mousedown', (event) => {
   }
 });
 
-document.body.addEventListener('mouseup', (event) => {
-  if (event.target.classList[0] === 'key_button') {
-    event.preventDefault();
-    if (!['key_16', 'key_17', 'key_18', 'key_20', 'key_162', 'key_172', 'key_182'].includes(event.target.classList[1])) {
-      document.querySelector(`.${event.target.classList[1]}`).classList.remove('active');
+window.addEventListener('mouseup', (event) => {
+  event.preventDefault();
+  document.body.querySelectorAll('.key_button').forEach((elem) => {
+    if (!['key_16', 'key_17', 'key_18', 'key_20', 'key_162', 'key_172', 'key_182'].includes(elem.classList[1])) {
+      elem.classList.remove('active');
     }
-  }
+  });
 });
