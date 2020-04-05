@@ -1,4 +1,5 @@
 /* global document */
+
 export default class KeyboardButton {
   constructor(keyCode, parent, keyCodes) {
     this.parent = parent;
