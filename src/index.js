@@ -35,6 +35,11 @@ InputBody.generate();
 document.body.append(InputBody.selfObj);
 KeyboardBody.generate();
 document.body.append(KeyboardBody.selfObj);
+const keyLayout = document.createElement('p');
+keyLayout.innerHTML = 'Press CTRL + SHIFT keys for change keyboard layout';
+keyLayout.style.color = 'honeydew';
+keyLayout.style.textAlign = 'center';
+document.body.append(keyLayout);
 KeyboardBody.allButtons = document.querySelectorAll('.key_button');
 
 window.addEventListener('keydown', (event) => {
