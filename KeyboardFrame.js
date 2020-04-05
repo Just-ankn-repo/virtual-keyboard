@@ -33,13 +33,13 @@ export default class KeyboardFrame {
     this.allButtons.forEach((element) => {
       const keyId = element.classList[1].match(/\d+/g);
       if (this.mods.lang === 'default' || !this.keyCodes[keyId][this.mods.lang]) {
-        if (this.keyCodes[keyId].shift && (this.mods.shiftKey === 'on' || this.mods.capsKey === 'on')) {
+        if (this.keyCodes[keyId].shift && ((this.mods.shiftKey === 'on' && this.mods.capsKey === 'off') || (this.mods.shiftKey === 'off' && this.mods.capsKey === 'on'))) {
           window[`key_${keyId}`].update(this.keyCodes[keyId].shift);
         } else {
           window[`key_${keyId}`].update(this.keyCodes[keyId].default);
         }
       } else if (this.mods.lang === 'ru' && this.keyCodes[keyId][this.mods.lang]) {
-        if (this.mods.shiftKey === 'on' || this.mods.capsKey === 'on') {
+        if ((this.mods.shiftKey === 'on' && this.mods.capsKey === 'off') || (this.mods.shiftKey === 'off' && this.mods.capsKey === 'on')) {
           window[`key_${keyId}`].update(this.keyCodes[keyId][this.mods.lang].shift);
         } else {
           window[`key_${keyId}`].update(this.keyCodes[keyId][this.mods.lang].default);

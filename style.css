@@ -12,13 +12,16 @@
 body {
     width: 687px;
     margin: auto;
+    background-color: rgb(22, 22, 22);
 }
 
 .input_frame {
     border: 2px solid black;
-    border-radius: 1%;
+    border-radius: 5px;
     width: 683px;
     resize: none;
+    background-color: rgb(58, 58, 58);
+    color: honeydew;
 }
 
 .keyboard_frame {
@@ -26,7 +29,8 @@ body {
     flex-direction: column;
     user-select: none;
     border: 2px solid black;
-    border-radius: 1%;
+    border-radius: 5px;
+    background-color: gray;
 }
 
 .keyboard_row {
@@ -36,7 +40,7 @@ body {
 }
 
 .key_button {
-    border-radius: 15%;
+    border-radius: 8px;
     border: 1.2px solid black;
     margin: 2px;
     padding: 10px 5px;
@@ -46,11 +50,13 @@ body {
     animation-fill-mode: forwards;
     flex: 1;
     text-align: center;
+    background-color: rgb(58, 58, 58);
+    color: honeydew;
 }
 
 .keyboard_row:nth-child(5) .key_button:nth-child(4) {
     flex: 10;
-    border-radius: 4%;
+    border-radius: 8px;
     text-align: center;
 }
 
@@ -67,7 +73,6 @@ body {
 }
 
 .active {
-    /* background-color: aqua; */
     animation: push;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
@@ -81,6 +86,8 @@ body {
     100% {
         transform: scale(0.9);
         opacity: 0.9;
+        background-color: rgb(136, 136, 136);
+        color: rgb(22, 22, 22);
     }
 }
 
@@ -88,6 +95,8 @@ body {
     0% {
         transform: scale(0.9);
         opacity: 0.9;
+        background-color: rgb(136, 136, 136);
+        color: rgb(22, 22, 22);
       }
     100% {
         transform: scale(1);
